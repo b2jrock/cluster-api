@@ -24,7 +24,7 @@ Cluster API requires an existing kubernetes cluster accessible via kubectl, choo
 
   ```bash
   kind create cluster --name=clusterapi
-  export KUBECONFIG="$(kind get kubeconfig-path --name="clusterapi")"
+  kubectl cluster-info --context kind-clusterapi
   ```
 {{#/tab }}
 {{#tab Docker}}
@@ -58,7 +58,7 @@ nodes:
         containerPath: /var/run/docker.sock
 EOF
   kind create cluster --config ./kind-cluster-with-extramounts.yaml --name clusterapi
-  export KUBECONFIG="$(kind get kubeconfig-path --name="clusterapi")"
+  kubectl cluster-info --context kind-clusterapi
   ```
 {{#/tab }}
 {{#/tabs }}
