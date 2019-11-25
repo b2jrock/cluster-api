@@ -30,7 +30,7 @@ this repository.**
 ### Prerequisites
 
 1. Cluster API runs its operations in Kubernetes. A pre-existing or temporary bootstrap cluster is required. Currently, we support multiple methods to bootstrap Cluster API: `kind` (preferred), `minikube` or any pre-existing cluster.
-   - If you want to use container, install [kind](https://github.com/kubernetes-sigs/kind#installation-and-usage). This is preferred.
+   - If you want to use container, install [kind](https://github.com/kubernetes-sigs/kind#installation-and-usage), version 0.6.0 or greater. This is preferred.
    - If you want to use VM, install [minikube](https://kubernetes.io/docs/tasks/tools/install-minikube/), version 0.30.0 or greater.
    - If you want to use existing Kubernetes cluster, prepare your kubeconfig.
 2. If you are using `kind` or existing Kubernetes cluster, go to step 3. If you are using `minikube`, install a [driver](https://github.com/kubernetes/minikube/blob/master/docs/drivers.md). For Linux, we recommend `kvm2`. For MacOS, we recommend VirtualBox.
@@ -87,10 +87,10 @@ Also, some environment variables are supported:
 
 ### Interacting with your cluster
 
-If you are using kind, set the `KUBECONFIG` environment variable first before using kubectl:
+If you are using kind, set your context to point at the newly created cluster:
 
 ```
-export KUBECONFIG="$(kind get kubeconfig-path --name="clusterapi")"
+kubectl cluster-info --context kind-clusterapi
 ```
 
 Once you have created a cluster, you can interact with the cluster and machine
