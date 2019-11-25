@@ -19,6 +19,7 @@ Cluster API requires an existing kubernetes cluster accessible via kubectl, choo
 <h1>Warning</h1>
 
 [kind] is not designed for production use; it is intended for development and testing environments.
+The commands below require kind version 0.6.0 or greater.
 
 </aside>
 
@@ -34,7 +35,7 @@ Cluster API requires an existing kubernetes cluster accessible via kubectl, choo
 <h1>Warning</h1>
 
 [kind] is not designed for production use; it is intended for development and testing environments.
-
+The commands below require kind version 0.6.0 or greater.
 </aside>
 
 <aside class="note warning">
